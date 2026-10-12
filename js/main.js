@@ -114,8 +114,9 @@
      2. 爱心 Kitty 贴纸:围绕信纸的各种彩色爱心小猫
      ============================================================ */
   var PALETTE = [
-    "#e8455f", "#ff6b81", "#ff8fa3", "#f7b733",
-    "#a78bfa", "#60c5ff", "#7fce7f", "#ff8a5c", "#ef7bb8", "#ff5f8f"
+    "#ff69b4", "#ff8fab", "#ff4757", "#ffb6c1", "#e8449b",
+    "#f7a1c4", "#ff9f68", "#c9a2ff", "#8fd3ff", "#ffd166",
+    "#ff7fa8", "#ffc0cb"
   ];
 
   // 位置:相对 .letter-stage(inset 负值的外圈),left/top 用百分比
@@ -139,28 +140,32 @@
   ];
 
   function heartKittySVG(color, i) {
+    // 设计稿风格:纯黑圆眼 · 黄鼻 · 微笑 · 玫粉蝴蝶结 · 浅粉细描边
     return (
       '<svg viewBox="0 0 110 112" xmlns="http://www.w3.org/2000/svg">' +
         // 大爱心
         '<path d="M55 100 C21 76 6 57 6 38 C6 20 19 9 34 9 C44 9 51 14 55 21 C59 14 66 9 76 9 C91 9 104 20 104 38 C104 57 89 76 55 100 Z" fill="' + color + '"/>' +
-        '<path d="M55 100 C21 76 6 57 6 38 C6 20 19 9 34 9 C44 9 51 14 55 21 C59 14 66 9 76 9 C91 9 104 20 104 38 C104 57 89 76 55 100 Z" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2.5"/>' +
+        '<path d="M55 100 C21 76 6 57 6 38 C6 20 19 9 34 9 C44 9 51 14 55 21 C59 14 66 9 76 9 C91 9 104 20 104 38 C104 57 89 76 55 100 Z" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="2.5"/>' +
         // 小猫脸
-        '<circle cx="55" cy="50" r="24" fill="#fffdfb" stroke="#f0bcc8" stroke-width="2.5"/>' +
-        '<path d="M36 34 L38 16 L53 28 Z" fill="#fffdfb" stroke="#f0bcc8" stroke-width="2.5" stroke-linejoin="round"/>' +
-        '<path d="M74 34 L72 16 L57 28 Z" fill="#fffdfb" stroke="#f0bcc8" stroke-width="2.5" stroke-linejoin="round"/>' +
-        '<path d="M40 31 L41 21 L50 28 Z" fill="#ffd7e0"/>' +
-        '<path d="M70 31 L69 21 L60 28 Z" fill="#ffd7e0"/>' +
-        '<circle cx="47" cy="48" r="2.9" fill="#4a3036"/>' +
-        '<circle cx="63" cy="48" r="2.9" fill="#4a3036"/>' +
-        '<ellipse cx="55" cy="55" rx="4.2" ry="3.1" fill="#f7b733"/>' +
-        '<g stroke="#e5a8b5" stroke-width="2.1" stroke-linecap="round">' +
-          '<path d="M26 46 H40"/><path d="M26 55 H40"/>' +
-          '<path d="M70 46 H84"/><path d="M70 55 H84"/>' +
+        '<circle cx="55" cy="50" r="24" fill="#fffdfb" stroke="#eebdc8" stroke-width="2.2"/>' +
+        '<path d="M36 34 L39 15 L53 28 Z" fill="#fffdfb" stroke="#eebdc8" stroke-width="2.2" stroke-linejoin="round"/>' +
+        '<path d="M74 34 L71 15 L57 28 Z" fill="#fffdfb" stroke="#eebdc8" stroke-width="2.2" stroke-linejoin="round"/>' +
+        '<circle cx="47" cy="48" r="3" fill="#3a2c31"/>' +
+        '<circle cx="63" cy="48" r="3" fill="#3a2c31"/>' +
+        '<ellipse cx="55" cy="55" rx="4.3" ry="3" fill="#ffc61e"/>' +
+        '<path d="M51 62 q4 4 8 0" stroke="#3a2c31" stroke-width="1.9" fill="none" stroke-linecap="round"/>' +
+        '<ellipse cx="39" cy="56" rx="5" ry="3.4" fill="#ffb3c4" opacity=".8"/>' +
+        '<ellipse cx="71" cy="56" rx="5" ry="3.4" fill="#ffb3c4" opacity=".8"/>' +
+        '<g stroke="#eebdc8" stroke-width="1.8" stroke-linecap="round">' +
+          '<path d="M24 45 H36"/><path d="M24 54 H36"/>' +
+          '<path d="M74 45 H86"/><path d="M74 54 H86"/>' +
         "</g>" +
-        // 每只小猫的小蝴蝶结不一样
+        // 蝴蝶结:奇偶两款小变化
         (i % 2 === 0
-          ? '<path d="M74 22 c-8 -9 -18 -5 -16 4 c2 8 12 8 16 1 z" fill="#e8455f"/><path d="M78 22 c8 -9 18 -5 16 4 c-2 8 -12 8 -16 1 z" fill="#e8455f"/><circle cx="76" cy="25" r="3.6" fill="#ff6b81"/>'
-          : '<circle cx="76" cy="22" r="4" fill="#fff0f3"/>') +
+          ? '<path d="M72 20 C63 9 52 12 54 21 C56 29 67 30 72 23 Z" fill="#ff69b4" stroke="#e8449b" stroke-width="1.8" stroke-linejoin="round"/>' +
+            '<path d="M76 20 C85 9 96 12 94 21 C92 29 81 30 76 23 Z" fill="#ff69b4" stroke="#e8449b" stroke-width="1.8" stroke-linejoin="round"/>' +
+            '<ellipse cx="74" cy="21" rx="4.4" ry="5.2" fill="#ff8fc0" stroke="#e8449b" stroke-width="1.8"/>'
+          : '<circle cx="74" cy="18" r="4.2" fill="#ffd166" stroke="#f0b43c" stroke-width="1.6"/>') +
       "</svg>"
     );
   }
@@ -224,6 +229,7 @@
         void letter.offsetWidth;
         refoldBtn.hidden = false;
         refoldBtn.classList.remove("is-hiding");
+        showToast("打开啦!💌");
         busy = false;
       }, TIMES.flap);
     });
